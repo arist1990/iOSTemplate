@@ -1,0 +1,55 @@
+//
+//  PrefixHeader.pch
+//  iOSTemplate
+//
+//  Created by ARIST on 2017/8/23.
+//  Copyright © 2017年 Neil. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import <UIKit/UIKit.h>
+#import "CommonUtils.h"
+#import "HttpClient.h"
+#import "NSObject+Json.h"
+#import "NSString+Json.h"
+#import "NSUserDefaultTools.h"
+#import "UIColor+HexColor.h"
+#import "UIImage+Rotate_Flip.h"
+#import "UIView+Additions.h"
+#import "UIViewExt.h"
+#import "Masonry.h"
+
+
+#endif /* PrefixHeader_pch */
+
+// 获取设备的物理高度
+#define ScreenHeight ([UIScreen mainScreen].bounds.size.height)
+// 获取设备的物理宽度
+#define ScreenWidth ([UIScreen mainScreen].bounds.size.width)
+
+// 主页面 Tab 高度
+#define kTabBarHeight 49
+
+#pragma mark - Color
+// 从16进制得到颜色值 0x222222
+#define kCyColorFromHexA(hex, a) [UIColor colorWithRed:(((hex & 0xff0000) >> 16) / 255.0f) green:(((hex & 0x00ff00) >> 8) / 255.0f) blue:((hex & 0x0000ff) / 255.0f) alpha:(a)]
+#define kCyColorFromHex(hex) [UIColor colorWithRed:(((hex & 0xff0000) >> 16) / 255.0f) green:(((hex & 0x00ff00) >> 8) / 255.0f) blue:((hex & 0x0000ff) / 255.0f) alpha:(1.0f)]
+
+#define kColorStyle kCyColorFromHex(0x54c252)       // 主题颜色
+#define kColorStylePressed kCyColorFromHex(0x35aa33)
+#define kColorStyleAlpha8 kCyColorFromHexA(0x54c252, 0.8)
+#define kColorStyleAlpha5 kCyColorFromHexA(0x54c252, 0.5)
+#define kColorBlackAlpha5 kCyColorFromHexA(0x000000, 0.5)
+#define kColorButtonWhite kCyColorFromHex(0xf0f0f0)
+#define kColorButtonWhitePressed kCyColorFromHex(0xc8c8c8)
+#define kColorHintBackground kCyColorFromHex(0xff7c7c)       // 提示颜色
+#define kColorBackground kCyColorFromHex(0xefefef)       // 默认背景颜色
+#define kColorTextViewBackground kCyColorFromHex(0xfafafa)       // 默认背景颜色
+#define kColorBackgroundTopic kCyColorFromHex(0xdcdcdc)       // 发现页面背景颜色
+#define kColorVoteRed kCyColorFromHex(0xfd3439)       // 投票红色颜色
+#define kColorVoteBlue kCyColorFromHex(0x36b1f2)       // 投票蓝色颜色
